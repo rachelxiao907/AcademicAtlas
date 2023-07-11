@@ -43,7 +43,7 @@ for a_tag in a_tags:
         value = row.find('div', class_='field--item').get_text()
         if key == 'Course Description:':
             course['course_description'] = value
-        elif key == 'Term':
+        elif key == 'Term:':
             term = value
     
     # Application and admissions scraping
@@ -69,10 +69,10 @@ for a_tag in a_tags:
             course['app_date'] = next(application_deadlines)
             break
 
-    course['enrollment_fee'] = 1,500
+    course['enrollment_fee'] = 1500
     course['credit_offerred'] = "college"
-    course['tuition'] = 4,222
-    course['start_date_term_1'] = "" #TERM?? they're in a pdf but it's outdated
+    course['tuition'] = 4222
+    course['start_date_term_1'] = term #TERM?? they're in a pdf but it's outdated
     course['end_date_term_1'] = ""
     course['start_date_term_2'] = ""
     course['end_date_term_2'] = ""
@@ -80,7 +80,7 @@ for a_tag in a_tags:
     course['end_date_term_3'] = ""
 
     course['elligibility_requirements'] = "For juniors and seniors attending a local high school. Students can start applying the summer after grade 10. Not designed for students who have already graduated high school, nor for those admitted to Penn through the Early Decision option. Scores in the 85th percentile or greater in all sections of their standardized tests (SAT, PSAT, ACT). (Students who have not taken any standardized tests may submit an additional letter of recommendation.) A variety of extracurricular interests."
-    course['grades'] = 11, 12
+    course['grades'] = "11-12"
     
     course['link'] = course_url
     course['tags'] = ""
